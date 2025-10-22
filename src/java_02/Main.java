@@ -53,10 +53,21 @@ public class Main {
         System.out.printf("The number is: %f.%n", 3.14159);
         System.out.printf("The number is: %.2f.%n", 3.14159);
 
+        // Formatimi i teksteve
+        System.out.printf("|%10s|%n", "Java"); // min 10 karaktere nese nuk i kemi 10 tekstin e shtyn ne anen e djatht
+        System.out.printf("|%-10s|%n", "Python"); // min 10 karaktere nese nuk i kemi 10 tekstin e shtyn ne anen e majt
 
+        // Char => 'c', String => "Java"
+        System.out.printf("Laptop price is: 250.00%s%n", "$");
+        System.out.printf("Laptop price is: 250.00%c%n", '$');
 
+        // Kombimin i placholderave te ndryshem
+        System.out.printf("Une quhem %s %S dhe jam %d vjecar.%n", "Filan", "Fisteku", 20);
 
+        // Vlera true false => e vertete e pavertete => 1, 0
+        System.out.printf("A jam student: %b%n", true);
+        System.out.printf("A jam student: %B%n", false);
 
-
+        System.out.printf("Produkti: %s | Sasia: %d | Cmimi: %.2f%n", "Iphone 17 Pro Max", 1, 1200.5);
     }
 }
