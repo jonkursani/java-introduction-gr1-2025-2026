@@ -9,39 +9,38 @@ public class StringAssignment {
         System.out.print("Shkruani nje tekst: ");
         String teksti = sc.nextLine();
 
-        // kontrolloni nese useri ka shkruar tekstin
-        // if (teksti.trim().isEmpty()) { // true ose false
-        if (teksti.isBlank()) { // true ose false
+        // if (teksti.trim().isEmpty()) {
+        if (teksti.isBlank()) {
             System.out.println("Ju nuk keni shkruar asnje tekst");
         } else {
             // a)
-            int gjatesiaETekstit = teksti.length();
+            System.out.println("Numri i karaktereve qe i permban ky tekst eshte: " + teksti.length());
 
-            System.out.println("Numri i shkronjave ne kete tekst eshte: " + gjatesiaETekstit);
-
+            int indeksiIFundit = teksti.length() - 1;
             // b)
-            System.out.printf("Shkruaj indeksin nga 0 deri ne %d: ", gjatesiaETekstit);
-            int index = sc.nextInt();
+            System.out.printf("Shkruani indeksin prej 0 deri ne %d: ", indeksiIFundit);
+            int indeksi = sc.nextInt();
 
-            if (index > gjatesiaETekstit) {
-                System.out.printf("Indeksi i lejuar eshte prej 0 deri ne %d", gjatesiaETekstit);
+            if (indeksi > indeksiIFundit) {
+                System.out.printf("Indeksi i lejuar eshte prej 0 deri ne %d%n", indeksiIFundit);
+                return;
             } else {
-                System.out.println(teksti.substring(index));
+                System.out.println(teksti.substring(indeksi));
             }
 
             // c)
-            System.out.printf("Shkruaj indeksin nga %d deri ne %d: ", index, gjatesiaETekstit);
-            int indeksiIMbarimit = sc.nextInt();
-            sc.nextLine(); // lexohet enter ne tastiere
+            System.out.printf("Shkruani indeksin prej %d deri ne %d: ", indeksi, indeksiIFundit);
+            int indeksiIMbarimit = sc.nextInt(); // Integer.parseInt(sc.nextLine()) // "1"
+            sc.nextLine(); // enter nuk e lexojke nextInt()
 
-            if (indeksiIMbarimit > gjatesiaETekstit) {
-                System.out.printf("Indeksi i lejuar eshte prej %d deri ne %d", index, gjatesiaETekstit);
+            if (indeksiIMbarimit > indeksiIFundit || indeksiIMbarimit < indeksi) {
+                System.out.printf("Indeksi i lejuar eshte prej %d deri ne %d%n", indeksi, indeksiIFundit);
             } else {
-                System.out.println(teksti.substring(index, indeksiIMbarimit)); // prej index deri ne indeksiIMbarimit - 1
+                System.out.println(teksti.substring(indeksi, indeksiIMbarimit + 1)); // 0 - indeksiIMbarimit - 1
             }
 
             // d)
-            System.out.print("Shkruaj fjalen qe po kerkoni: ");
+            System.out.print("Shkruani fjalen qe po kerkoni: ");
             String fjalaEKerkuar = sc.nextLine();
 
             if (teksti.toLowerCase().contains(fjalaEKerkuar.toLowerCase())) {
@@ -51,15 +50,15 @@ public class StringAssignment {
             }
 
             // e)
-            System.out.print("Shkruaj fjalen qe po kerkoni ta zevendesoni: ");
+            System.out.print("Shkruani fjalen qe kerkoni ta zevendesoni: ");
             String fjalaPerZevendesim = sc.nextLine();
 
             if (teksti.toLowerCase().contains(fjalaPerZevendesim.toLowerCase())) {
-                System.out.print("Shkruaj fjalen zevendesuese: ");
+                System.out.print("Shkruani fjalen per zevendesim: ");
                 String fjalaZevendesuese = sc.nextLine();
                 System.out.println(teksti.replace(fjalaPerZevendesim, fjalaZevendesuese));
             } else {
-                System.out.printf("Fjala e kerkuar per zevendesim '%s' nuk u gjet", fjalaPerZevendesim);
+                System.out.printf("Fjala e kerkuar '%s' nuk u gjet%n", fjalaEKerkuar);
             }
         }
     }
